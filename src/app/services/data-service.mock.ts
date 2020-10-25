@@ -5,11 +5,15 @@ export class DataServiceMock {
         description: "The introduction"
     }];
 
+    // category_subcategory = [
+    //     {
+    //         categoryId: 0,
+    //         subCategoryId: 0
+    //     }
+    // ];
+
     category_subcategory = [
-        {
-            categoryId: 0,
-            subCategoryId: 0
-        }
+        [0]
     ];
 
     subCategory = [
