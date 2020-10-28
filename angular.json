@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sacred-text-web"
+    }
+  },
+  "defaultProject": "sacred-text-web",
+  "cli": {
+    "analytics": "013ead25-0f2b-4183-a8cc-731a1cc41a14"
+  }
 }
