@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/services/data-service.service';
+import { CategoryService } from 'src/app/services/data-service.service';
 
 @Component({
   selector: 'app-app-main',
@@ -8,7 +8,7 @@ import { DataService } from 'src/app/services/data-service.service';
 })
 export class AppMainComponent implements OnInit {
 
-  constructor(private categoryService: DataService) { }
+  constructor(private categoryService: CategoryService) { }
 
   subCategories$ = this.categoryService.getSubCategories(0);
   

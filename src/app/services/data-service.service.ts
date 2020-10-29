@@ -7,7 +7,7 @@ import { DataServiceMock } from './data-service.mock';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class CategoryService {
 
   constructor(private data: DataServiceMock) { }
 
