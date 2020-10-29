@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { Observable, of, scheduled, Subscription, zip } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { Category } from '../data/models/category';
-import { DataServiceMock } from './category-service.mock';
+import { CategoryServiceMock } from './category-service.mock';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
 
-  constructor(private data: DataServiceMock) { }
+  constructor(private data: CategoryServiceMock) { }
 
   getSubCategories(categoryId : number): Observable<Category[]>
   {

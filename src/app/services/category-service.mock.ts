@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
     providedIn: 'root'
   })
-export class DataServiceMock {
+export class CategoryServiceMock {
     category = [{
         id: 0,
         name: "Prologue",
