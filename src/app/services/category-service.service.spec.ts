@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CategoryService } from './data-service.service';
+import { CategoryService } from './category-service.service';
 
 describe('DataServiceService', () => {
   let service: CategoryService;

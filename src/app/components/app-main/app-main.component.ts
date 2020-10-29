@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryService } from 'src/app/services/data-service.service';
+import { CategoryService } from 'src/app/services/category-service.service';
 
 @Component({
   selector: 'app-app-main',

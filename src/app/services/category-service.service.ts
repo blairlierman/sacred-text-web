@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of, scheduled, Subscription, zip } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { Category } from '../data/models/category';
-import { DataServiceMock } from './data-service.mock';
+import { DataServiceMock } from './category-service.mock';
 
 @Injectable({
   providedIn: 'root'
