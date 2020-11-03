@@ -1,5 +1,6 @@
 <ul>
-    <li *ngFor="let subCategory of subCategories$ | async">
-        {{subCategory.name}}: {{subCategory.description}}
+    <li *ngFor="let category of categories$ | async">
+        <div><a [routerLink]="['/categories', category.id, 'subcategories']" routerLinkActive="router-link-active" >{{category.name}}</a></div>
+        <div>{{category.description}}</div>
     </li>
 </ul>
