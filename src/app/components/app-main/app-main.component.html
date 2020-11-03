@@ -1,5 +1,6 @@
 <ul>
-    <li *ngFor="let subCategory of subCategories$ | async">
-        {{subCategory.name}}: {{subCategory.description}}
+    <li *ngFor="let category of categories$ | async">
+        <div>{{category.name}}</div>
+        <div>{{category.description}}</div>
     </li>
 </ul>

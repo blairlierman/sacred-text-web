@@ -11,6 +11,8 @@ export class CategoryService {
 
   constructor(private data: CategoryServiceMock) { }
 
+  categories$: Observable<Category[]> = of(this.data.category);
+
   getSubCategories(categoryId : number): Observable<Category[]>
   {
     let cat_subcat$ = of(this.data.category_subcategory);

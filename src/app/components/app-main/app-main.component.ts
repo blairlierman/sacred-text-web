@@ -10,7 +10,8 @@ export class AppMainComponent implements OnInit {
 
   constructor(private categoryService: CategoryService) { }
 
-  subCategories$ = this.categoryService.getSubCategories(0);
+  categories$ = this.categoryService.categories$;
+  subCategories$ = this.categoryService.getSubCategories(1);
   
   ngOnInit(): void {
   }
