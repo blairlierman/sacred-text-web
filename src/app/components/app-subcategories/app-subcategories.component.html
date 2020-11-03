@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let subCategory of subCategories$ | async">
+        <div>{{subCategory.name}}</div>
+        <div>{{subCategory.description}}</div>
+    </li>
+</ul>
