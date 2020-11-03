@@ -1,6 +1,6 @@
 <ul>
     <li *ngFor="let category of categories$ | async">
-        <div>{{category.name}}</div>
+        <div><a [routerLink]="['/categories', category.id, 'subcategories']" routerLinkActive="router-link-active" >{{category.name}}</a></div>
         <div>{{category.description}}</div>
     </li>
 </ul>
