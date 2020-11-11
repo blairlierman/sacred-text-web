@@ -1,6 +1,6 @@
-<ul>
-    <li *ngFor="let subCategory of subCategories$ | async">
-        <div>{{subCategory.name}}</div>
-        <div>{{subCategory.description}}</div>
-    </li>
-</ul>
+<div class="card text-white bg-primary m-3" *ngFor="let subCategory of subCategories$ | async">
+  <h5 class="card-header">{{subCategory.name}}</h5>
+  <div class="card-body" >
+    <p class="card-text">{{subCategory.description}}</p>
+  </div>
+</div>

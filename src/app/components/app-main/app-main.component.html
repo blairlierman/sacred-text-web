@@ -1,6 +1,26 @@
-<ul>
+<!-- <ul>
     <li *ngFor="let category of categories$ | async">
         <div><a [routerLink]="['/categories', category.id, 'subcategories']" routerLinkActive="router-link-active" >{{category.name}}</a></div>
         <div>{{category.description}}</div>
     </li>
 </ul>
+
+<ngb-accordion *ngFor="let category of categories$ | async" #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel>
+        <ng-template ngbPanelTitle>
+            <a [routerLink]="['/categories', category.id, 'subcategories']" routerLinkActive="router-link-active" >{{category.name}}</a>
+          </ng-template>
+        <ng-template ngbPanelContent>
+        {{category.description}}
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion> -->
+
+  <a class="card text-white bg-dark m-3" *ngFor="let category of categories$ | async"
+  [routerLink]="['/categories', category.id, 'subcategories']" routerLinkActive="router-link-active" >
+    <!-- <div class="card m-2" style="width: 18rem;" *ngFor="let category of categories$ | async"> -->
+        <h5 class="card-header">{{category.name}}</h5>
+    <div class="card-body" >
+      <p class="card-text">{{category.description}}</p>
+    </div>
+  </a>
