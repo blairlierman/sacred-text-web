@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark bg-dark text-light">
   <ul class="nav">
     <li class="nav-item" *ngIf="navigation.showBackButton$ | async">
-      <a class="nav-link active p-0" href="#"
+      <a class="nav-link active p-0" [routerLink]="[]" (click)="goBack()"
         ><ion-icon name="chevron-back-sharp" size="large" class="text-light"></ion-icon>
       </a>
     </li>
