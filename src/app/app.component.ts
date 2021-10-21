@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationService } from './services/navigation/navigation.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sacred-text-web';
+
+  constructor(public navigation: NavigationService) {}
 }

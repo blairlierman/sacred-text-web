@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-dark text-light">
   <ul class="nav">
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="navigation.showBackButton$ | async">
       <a class="nav-link active p-0" href="#"
         ><ion-icon name="chevron-back-sharp" size="large"></ion-icon
       ></a>
