@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category-service.service';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-app-subcategories',
@@ -8,11 +9,16 @@ import { CategoryService } from 'src/app/services/category-service.service';
 })
 export class AppSubcategoriesComponent implements OnInit {
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService, private navService: NavigationService) { 
+    this.navService.backButtonVisibility(true);
+  }
 
   subCategories$ = this.categoryService.getSubCategories(1);
 
   ngOnInit(): void {
+  }
+  
+  ngAfterViewInit() {
   }
 
 }

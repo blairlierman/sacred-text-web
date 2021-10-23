@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppMainComponent } from './components/app-main/app-main.component';
 import { AppSubcategoriesComponent } from './components/app-subcategories/app-subcategories.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    IonicModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
