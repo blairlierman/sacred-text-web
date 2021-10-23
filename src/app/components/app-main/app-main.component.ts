@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category-service.service';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-app-main',
@@ -8,7 +9,9 @@ import { CategoryService } from 'src/app/services/category-service.service';
 })
 export class AppMainComponent implements OnInit {
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService, private navService: NavigationService) { 
+    this.navService.backButtonVisibility(false);
+  }
 
   categories$ = this.categoryService.categories$;
   
