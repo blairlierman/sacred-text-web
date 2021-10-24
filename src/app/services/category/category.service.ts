@@ -13,6 +13,12 @@ export class CategoryService {
 
   categories$: Observable<Category[]> = of(this.data.category);
 
+  getCategoryName(categoryId: number): string {
+    console.log(`CatService::getCategoryName categoryId ${categoryId}`)
+    console.log(`CatService::getCategoryName name ${this.data.category[categoryId].name}`)
+    return this.data.category[categoryId].name;
+  }
+
   getSubCategories(categoryId : number): Observable<Category[]>
   {
     let cat_subcat$ = of(this.data.category_subcategory);
