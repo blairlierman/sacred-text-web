@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, zip } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Category } from '../data/models/category';
-import { CategoryServiceMock } from './category-service.mock';
+import { Category } from '../../data/models/category';
+import { CategoryServiceMock } from './category.service.mock';
 
 @Injectable({
   providedIn: 'root'
