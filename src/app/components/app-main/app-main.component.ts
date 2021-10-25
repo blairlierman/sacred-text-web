@@ -13,6 +13,7 @@ export class AppMainComponent implements OnInit {
   constructor(private categoryService: CategoryService, private navigation: NavigationService,
     private route: ActivatedRoute) { 
     this.navigation.backButtonVisibility(false);
+    this.navigation.setCategory(null);
     // const categoryId = this.route.snapshot.paramMap.get('id');
     // console.log(`AppMainComponent categoryId in snapshot:${categoryId}`);
     // this.route.paramMap.subscribe(paramMap => {

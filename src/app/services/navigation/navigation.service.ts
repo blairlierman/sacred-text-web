@@ -24,9 +24,11 @@ export class NavigationService {
   {
     console.log(`NavService::setCategory categoryId ${categoryId}`)
     if(categoryId !== null && categoryId !== undefined) {
-      console.log(`NavService::setCategory categoryId ${categoryId}`)
       const categoryName = this.categoryService.getCategoryName(categoryId);
-      this.currentCategory.next(categoryName);
+      this.currentCategory.next(categoryName);   
+    }
+    else {
+      this.currentCategory.next(undefined);
     }
   }
 }
