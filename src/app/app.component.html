@@ -12,8 +12,18 @@
 </nav>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">Home</li>
-    <li *ngIf="navigation.category$ | async as category" class="breadcrumb-item active">{{category}}</li>
+    <li class="breadcrumb-item" 
+        [ngClass]="{'active': (navigation.category$ | async) == null && (navigation.subcategory$ | async) == null}" 
+        aria-current="page"
+    >
+      Home
+    </li>
+    <li *ngIf="navigation.category$ | async as category" 
+        class="breadcrumb-item" 
+        [ngClass]="{'active': category != null && (navigation.subcategory$ | async) == null}"
+    >
+      {{category}}
+    </li>
     <li *ngIf="navigation.subcategory$ | async" class="breadcrumb-item active">SubCategory</li>
   </ol>
 </nav>
