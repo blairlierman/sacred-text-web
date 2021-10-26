@@ -10,9 +10,11 @@
     </li>
   </ul>
 </nav>
-<ul>
-  <li>Home ></li>
-  <li *ngIf="navigation.category$ | async as category">{{category}}</li>
-  <li *ngIf="navigation.subcategory$ | async">SubCategory</li>
-</ul>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+    <li *ngIf="navigation.category$ | async as category" class="breadcrumb-item active">{{category}}</li>
+    <li *ngIf="navigation.subcategory$ | async" class="breadcrumb-item active">SubCategory</li>
+  </ol>
+</nav>
 <router-outlet></router-outlet>
