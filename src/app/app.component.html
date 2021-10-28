@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark bg-dark text-light">
   <ul class="nav">
     <li class="nav-item" *ngIf="navigation.showBackButton$ | async">
-      <a class="nav-link active p-0" [routerLink]="[]" (click)="goBack()"
+      <a class="nav-link active p-0  back-icon" [routerLink]="[]" (click)="goBack()"
         ><ion-icon name="chevron-back-sharp" size="large" class="text-light"></ion-icon>
       </a>
     </li>
@@ -9,5 +9,23 @@
       <h1 class="my-0">Sacred Text Lite</h1>
     </li>
   </ul>
+</nav>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" 
+        [ngClass]="{'active': (navigation.category$ | async) == null && (navigation.subcategory$ | async) == null}" 
+        [attr.aria-current]="(navigation.category$ | async) == null && (navigation.subcategory$ | async) == null ? 'page' : undefined"
+    >
+      Home
+    </li>
+    <li *ngIf="navigation.category$ | async as category" 
+        class="breadcrumb-item" 
+        [ngClass]="{'active': category != null && (navigation.subcategory$ | async) == null}"
+        [attr.aria-current]="category != null && (navigation.subcategory$ | async) == null ? 'page' : undefined"
+    >
+      {{category}}
+    </li>
+    <li *ngIf="navigation.subcategory$ | async" class="breadcrumb-item active">SubCategory</li>
+  </ol>
 </nav>
 <router-outlet></router-outlet>

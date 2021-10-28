@@ -5,5 +5,7 @@ $theme-colors: (
   "dark": #280126,  
 );
 
+$breadcrumb-divider: quote(">");
+
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

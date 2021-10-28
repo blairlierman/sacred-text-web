@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, zip } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Category } from '../data/models/category';
-import { CategoryServiceMock } from './category-service.mock';
+import { Category } from '../../data/models/category';
+import { CategoryServiceMock } from './category.service.mock';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,12 @@ export class CategoryService {
   constructor(private data: CategoryServiceMock) { }
 
   categories$: Observable<Category[]> = of(this.data.category);
+
+  getCategoryName(categoryId: number): string {
+    console.log(`CatService::getCategoryName categoryId ${categoryId}`)
+    console.log(`CatService::getCategoryName name ${this.data.category[categoryId].name}`)
+    return this.data.category[categoryId].name;
+  }
 
   getSubCategories(categoryId : number): Observable<Category[]>
   {
