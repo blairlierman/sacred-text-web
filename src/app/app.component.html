@@ -14,14 +14,14 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item" 
         [ngClass]="{'active': (navigation.category$ | async) == null && (navigation.subcategory$ | async) == null}" 
-        aria-current="page"
+        [attr.aria-current]="(navigation.category$ | async) == null && (navigation.subcategory$ | async) == null ? 'page' : undefined"
     >
-    <!-- TODO: Make aria-current dynamic like the 'active' class -->
       Home
     </li>
     <li *ngIf="navigation.category$ | async as category" 
         class="breadcrumb-item" 
         [ngClass]="{'active': category != null && (navigation.subcategory$ | async) == null}"
+        [attr.aria-current]="category != null && (navigation.subcategory$ | async) == null ? 'page' : undefined"
     >
       {{category}}
     </li>
