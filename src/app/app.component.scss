@@ -1,3 +1,29 @@
+html,
+body,
+.page {
+  margin: 0;
+  height: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  flex: 0 0;
+}
+
+.content {
+  flex: 1 1 auto;
+  position: relative;
+  overflow-y: auto;
+}
+
 .back-icon {
     max-height: 31px;
+}
+
+.breadcrumb {
+    margin-bottom: 0;
 }
