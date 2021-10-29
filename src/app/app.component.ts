@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
 import { NavigationService } from './services/navigation/navigation.service';
 
 @Component({
@@ -7,28 +9,29 @@ import { NavigationService } from './services/navigation/navigation.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  title = 'sacred-text-web';
+export class AppComponent implements OnInit, OnDestroy {
+  appTitle = 'Sacred Text Lite';
+  categorySub$ !: Subscription;
 
   constructor(public navigation: NavigationService, public router: Router,
-    private route: ActivatedRoute) {
-      // const categoryId = this.route.snapshot.paramMap.get('id');
-      // console.log(`AppComponent categoryId in snapshot:${categoryId}`);
-      // this.route.paramMap.subscribe(paramMap => {
-      //   const categoryId = paramMap.get('id');
-      //   console.log(`AppComponent categoryId in paramMap:${categoryId}`);
-      //   if(categoryId != null) { this.navigation.setCategory(parseInt(categoryId)); }
-      // });
+    private route: ActivatedRoute, private titleService: Title) {
   }
 
   ngOnInit(): void {
-    // const categoryId = this.route.snapshot.paramMap.get('id');
-    // console.log(`AppComponent::ngOnInit categoryId in snapshot:${categoryId}`);
-    // this.route.paramMap.subscribe(paramMap => {
-    //   const categoryId = paramMap.get('id');
-    //   console.log(`AppComponent::ngOnInit categoryId in paramMap:${categoryId}`);
-    //   if(categoryId != null) { this.navigation.setCategory(parseInt(categoryId)); }
-    // });
+    this.categorySub$ = this.navigation.category$.subscribe(categoryName => {
+      if(categoryName)
+      {
+        this.titleService.setTitle(`${categoryName} - ${this.appTitle}`);
+      }
+      else
+      {
+        this.titleService.setTitle(`${this.appTitle}`);
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.categorySub$.unsubscribe();
   }
 
   goBack() {
