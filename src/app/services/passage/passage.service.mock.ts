@@ -4,6 +4,28 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 export class PassageServiceMock {
+    subcat_passage = {
+        1: [1,2,3,4,5,6],
+        2: [7,8,9,10,11,12],
+        3: [13,14,15,16],
+        4: [17,18,19,20,21,22],
+        5: [23,24,25,26,27,28],
+        6: [29,30,31,32,33,34],
+        7: [35,36,37,38,39,40],
+        8: [41,42,43,44,45,46],
+        9: [47,48,49,50,51],
+        10: [52, 53, 54, 55, 56, 57],
+        11: [58, 59, 60, 61,62,63],
+        12: [64,65,66,67,68,69],
+        13: [70,71,72,73,74,75],
+        14: [76,77,78,79,80,81],
+        15: [82,83,84,85,86,87],
+        16: [88,89,91,92,93],
+        17: [94,95,96,97,98,99],
+        18: [100,101,102,103,104,105],
+        19: [106,107,108,109,110,111],
+    };
+    
     passage = [
         { id: 1, text: "There is no compulsion in religion.", subcatId: 1, religionId: 1, reference: "Qur'an 2.256" },
         { id: 2, text: "The Buddha says, 'To be attached to a certain view and to look down upon another views as inferior--this the wise men call a fetter.'", subcatId: 1, religionId: 2, reference: "Sutta Nipata 798" },
@@ -116,6 +138,15 @@ export class PassageServiceMock {
         { id: 109, text: "As for the cowardly, the faithless, the polluted, as for murderers, fornicators, sorcerers, idolaters, and all liars, their lot shall be in the lake that burns with fire and sulphur, which is the second death.", subcatId: 19, religionId: 3, reference: "Revelation 21.8" },
         { id: 110, text: "And many of those who sleep in the dust of the earth shall awake, some to everlasting life, some to shame and everlasting contempt.", subcatId: 19, religionId: 5, reference: "Daniel 12.2" },
         { id: 111, text: "Taoism has no concept of Hell", subcatId: 19, religionId: 6, reference: "" },
+    ];
 
+    religion = [
+        { id: "1", name: "Islam", image: "islam.png" },
+        { id: "2", name: "Buddhism", image: "buddhism.png" },
+        { id: "3", name: "Christianity", image: "christianity.png" },
+        { id: "4", name: "Hinduism", image: "hinduism.png" },
+        { id: "5", name: "Judaism", image: "judaism.png" },
+        { id: "6", name: "Taoism", image: "taoism.png" },
+        { id: "7", name: "Judaism and Christianity", image: "judaism+christianity.png" },
     ];
 }
