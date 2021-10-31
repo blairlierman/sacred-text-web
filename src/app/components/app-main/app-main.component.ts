@@ -14,26 +14,12 @@ export class AppMainComponent implements OnInit {
     private route: ActivatedRoute) { 
     this.navigation.backButtonVisibility(false);
     this.navigation.setCategory(null);
-    // const categoryId = this.route.snapshot.paramMap.get('id');
-    // console.log(`AppMainComponent categoryId in snapshot:${categoryId}`);
-    // this.route.paramMap.subscribe(paramMap => {
-    //   const categoryId = paramMap.get('id');
-    //   console.log(`AppMainComponent categoryId in paramMap:${categoryId}`);
-    //   if(categoryId != null) { this.navigation.setCategory(parseInt(categoryId)); }
-    // });
+    this.navigation.setSubcategory(null);
   }
 
   categories$ = this.categoryService.categories$;
   
   ngOnInit(): void {
-    // const categoryId = this.route.snapshot.paramMap.get('id');
-    // console.log(`AppMainComponent::ngOnInit categoryId in snapshot:${categoryId}`);
-    // this.route.paramMap.subscribe(paramMap => {
-    //   console.log(`ParamMap: ${JSON.stringify(paramMap)}`);
-    //   const categoryId = paramMap.get('id');
-    //   console.log(`AppMAinComponent::ngOnInit categoryId in paramMap:${categoryId}`);
-    //   if(categoryId != null) { this.navigation.setCategory(parseInt(categoryId)); }
-    // });
   }
 
 }
