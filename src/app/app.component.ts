@@ -12,6 +12,7 @@ import { NavigationService } from './services/navigation/navigation.service';
 export class AppComponent implements OnInit, OnDestroy {
   appTitle = 'Sacred Text Lite';
   categorySub$ !: Subscription;
+  subcategorySub$ !: Subscription;
 
   constructor(public navigation: NavigationService, public router: Router,
     private route: ActivatedRoute, private titleService: Title) {
@@ -28,10 +29,22 @@ export class AppComponent implements OnInit, OnDestroy {
         this.titleService.setTitle(`${this.appTitle}`);
       }
     });
+
+    this.subcategorySub$ = this.navigation.subcategory$.subscribe(subcategoryName => {
+      if(subcategoryName)
+      {
+        this.titleService.setTitle(`${subcategoryName} - ${this.appTitle}`);
+      }
+      else
+      {
+        this.titleService.setTitle(`${this.appTitle}`);
+      }
+    });
   }
 
   ngOnDestroy(): void {
     this.categorySub$.unsubscribe();
+    this.subcategorySub$.unsubscribe();
   }
 
   goBack() {
