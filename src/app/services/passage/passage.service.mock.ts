@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Religion } from 'src/app/data/models/religion';
 
 @Injectable({
     providedIn: 'root'
@@ -140,13 +141,13 @@ export class PassageServiceMock {
         { id: 111, text: "Taoism has no concept of Hell", subcatId: 19, religionId: 6, reference: "" },
     ];
 
-    religion = [
-        { id: "1", name: "Islam", image: "islam.png" },
-        { id: "2", name: "Buddhism", image: "buddhism.png" },
-        { id: "3", name: "Christianity", image: "christianity.png" },
-        { id: "4", name: "Hinduism", image: "hinduism.png" },
-        { id: "5", name: "Judaism", image: "judaism.png" },
-        { id: "6", name: "Taoism", image: "taoism.png" },
-        { id: "7", name: "Judaism and Christianity", image: "judaism+christianity.png" },
+    religion: Religion[] = [
+        { id: 1, name: "Islam", image: "islam.png" },
+        { id: 2, name: "Buddhism", image: "buddhism.png" },
+        { id: 3, name: "Christianity", image: "christianity.png" },
+        { id: 4, name: "Hinduism", image: "hinduism.png" },
+        { id: 5, name: "Judaism", image: "judaism.png" },
+        { id: 6, name: "Taoism", image: "taoism.png" },
+        { id: 7, name: "Judaism and Christianity", image: "judaism+christianity.png" },
     ];
 }

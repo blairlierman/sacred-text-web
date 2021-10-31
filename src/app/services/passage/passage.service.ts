@@ -15,11 +15,18 @@ export class PassageService {
   {
     let passage$ = of(this.data.passage);
     let passageIds$ = of(this.data.subcat_passage[subcategoryId]);
+    let religions$ = of(this.data.religion);
 
-    return zip(passage$, passageIds$)
+    return zip(passage$, passageIds$, religions$)
     .pipe(
-      map(([passages, passageIds]) => {
-        return passageIds.map((passageId: number) => passages.find(passage => passage.id === passageId) as Passage);
+      map(([passages, passageIds, religions]) => {
+        return passageIds.map((passageId: number) => {
+            const passage = passages.find(passage => passage.id === passageId); 
+            const religion = religions.find(religion => religion.id == passage?.religionId);
+
+            return {...passage, religion: religion?.name} as Passage;
+          }
+          );
       }),        
     )
   }

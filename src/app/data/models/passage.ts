@@ -2,6 +2,6 @@ export interface Passage {
     id: number,
     text: string,
     subcatId?: number,
-    religionId: number,
+    religion: string,
     reference: string
 }
