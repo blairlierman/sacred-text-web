@@ -1,6 +1,7 @@
-<div class="card text-white bg-primary m-3" *ngFor="let subCategory of subCategories$ | async">
+<a class="card text-white bg-primary m-3" *ngFor="let subCategory of subCategories$ | async"
+[routerLink]="['/subcategories', subCategory.id, 'passages']" routerLinkActive="router-link-active">
   <h5 class="card-header">{{subCategory.name}}</h5>
   <div class="card-body" >
     <p class="card-text">{{subCategory.description}}</p>
   </div>
-</div>
+</a>

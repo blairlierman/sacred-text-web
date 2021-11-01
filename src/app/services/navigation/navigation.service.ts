@@ -31,4 +31,16 @@ export class NavigationService {
       this.currentCategory.next(undefined);
     }
   }
+
+  setSubcategory(subcategoryId: number | null)
+  {
+    console.log(`NavService::setSubcategory categoryId ${subcategoryId}`)
+    if(subcategoryId !== null && subcategoryId !== undefined) {
+      const subcategoryName = this.categoryService.getSubcategoryName(subcategoryId);
+      this.currentSubcategory.next(subcategoryName);   
+    }
+    else {
+      this.currentSubcategory.next(undefined);
+    }
+  }
 }

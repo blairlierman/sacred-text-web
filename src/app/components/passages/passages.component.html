@@ -1,0 +1,9 @@
+<div class="card text-white bg-primary m-3" *ngFor="let passage of passages$ | async">
+    <h5 class="card-header">{{passage.religion}}</h5>
+    <div class="card-body" >
+      <p class="card-text">{{passage.text}}</p>
+    </div>
+    <div class="card-footer text-right">
+        <p>{{passage.reference}}</p>
+    </div>
+</div>
