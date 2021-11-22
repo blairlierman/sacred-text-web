@@ -24,7 +24,7 @@ export class PassageService {
             const passage = passages.find(passage => passage.id === passageId); 
             const religion = religions.find(religion => religion.id == passage?.religionId);
 
-            return {...passage, religion: religion?.name} as Passage;
+            return {...passage, religion: religion?.name, religionIcon: religion?.imageName} as Passage;
           }
           );
       }),        

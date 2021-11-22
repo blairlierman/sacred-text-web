@@ -3,6 +3,30 @@
 		{
 			"iconName": "religion-buddhism",
 			"iconPath": "/assets/svg/buddhism.svg"
+		},
+		{
+			"iconName": "religion-christianity",
+			"iconPath": "/assets/svg/christianity.svg"
+		},
+		{
+			"iconName": "religion-hinduism",
+			"iconPath": "/assets/svg/hinduism.svg"
+		},
+		{
+			"iconName": "religion-islam",
+			"iconPath": "/assets/svg/islam.svg"
+		},
+		{
+			"iconName": "religion-judaism",
+			"iconPath": "/assets/svg/judaism.svg"
+		},
+		{
+			"iconName": "religion-judaism+christianity",
+			"iconPath": "/assets/svg/judaism+christianity.svg"
+		},
+		{
+			"iconName": "religion-taoism",
+			"iconPath": "/assets/svg/taoism.svg"
 		}
 	],
 	"customIcons": [

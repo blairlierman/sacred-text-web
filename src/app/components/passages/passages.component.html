@@ -1,6 +1,6 @@
 <div class="card text-white bg-primary m-3" *ngFor="let passage of passages$ | async">
   <div class="card-header border-0 d-flex flex-row align-items-center"> 
-    <svg-icon class="img-fluid float-left h-100 mh-100 mr-1" name="religion-buddhism" [applyClass]="true"
+    <svg-icon class="img-fluid float-left h-100 mh-100 mr-1" name="religion-{{passage.religionIcon}}" [applyClass]="true"
       [svgStyle]="{'width.rem': 4 }"
     >
     <!-- [svgStyle]="{'width.px':170,'fill':'rgb(150,50,255)','padding.px':1,'margin.px':3}" -->

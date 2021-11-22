@@ -142,12 +142,12 @@ export class PassageServiceMock {
     ];
 
     religion: Religion[] = [
-        { id: 1, name: "Islam", image: "islam.png" },
-        { id: 2, name: "Buddhism", image: "buddhism.png" },
-        { id: 3, name: "Christianity", image: "christianity.png" },
-        { id: 4, name: "Hinduism", image: "hinduism.png" },
-        { id: 5, name: "Judaism", image: "judaism.png" },
-        { id: 6, name: "Taoism", image: "taoism.png" },
-        { id: 7, name: "Judaism and Christianity", image: "judaism+christianity.png" },
+        { id: 1, name: "Islam", imageName: "islam" },
+        { id: 2, name: "Buddhism", imageName: "buddhism" },
+        { id: 3, name: "Christianity", imageName: "christianity" },
+        { id: 4, name: "Hinduism", imageName: "hinduism" },
+        { id: 5, name: "Judaism", imageName: "judaism" },
+        { id: 6, name: "Taoism", imageName: "taoism" },
+        { id: 7, name: "Judaism and Christianity", imageName: "judaism+christianity" },
     ];
 }

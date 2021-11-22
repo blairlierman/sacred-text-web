@@ -3,5 +3,6 @@ export interface Passage {
     text: string,
     subcatId?: number,
     religion: string,
+    religionIcon: string,
     reference: string
 }
