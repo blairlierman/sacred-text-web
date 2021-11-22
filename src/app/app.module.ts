@@ -8,6 +8,9 @@ import { AppSubcategoriesComponent } from './components/app-subcategories/app-su
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IonicModule } from '@ionic/angular';
 import { PassagesComponent } from './components/passages/passages.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { AngularSvgIconPreloaderModule } from 'angular-svg-icon-preloader';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,12 @@ import { PassagesComponent } from './components/passages/passages.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    IonicModule.forRoot()
+    IonicModule.forRoot(),
+    HttpClientModule,
+    AngularSvgIconModule.forRoot(), // angular-svg-icon library module
+		AngularSvgIconPreloaderModule.forRoot({
+			configUrl: '/assets/json/svg-icons.json',
+		}),
   ],
   providers: [],
   bootstrap: [AppComponent]
